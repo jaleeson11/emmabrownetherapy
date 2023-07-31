@@ -1,0 +1,20 @@
+@font-face {
+    font-family: 'WorkSans-Light';
+    src: url('WorkSans-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'WorkSans-Regular';
+    src: url('WorkSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Forum-Regular';
+    src: url('Forum-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -138,6 +138,7 @@ add_action( 'widgets_init', 'emmabrownetherapy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function emmabrownetherapy_scripts() {
+	wp_enqueue_style( 'emmabrownetherapy-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), EMMA_BROWNE_THERAPY_VERSION );
 	wp_enqueue_style( 'emmabrownetherapy-style', get_stylesheet_uri(), array(), EMMA_BROWNE_THERAPY_VERSION );
 
 	wp_enqueue_script( 'emmabrownetherapy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), EMMA_BROWNE_THERAPY_VERSION, true );
