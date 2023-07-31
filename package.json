@@ -26,5 +26,8 @@
     "dev": "npx mix",
     "watch": "npx mix watch",
     "prod": "npx mix --production"
-  }
+  },
+  "browserslist": [
+    ">0.3%, last 2 versions, not dead"
+  ]
 }
