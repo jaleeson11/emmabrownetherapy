@@ -7,9 +7,9 @@
  * @package Emma_Browne_Therapy
  */
 
-if ( ! defined( 'EMMA_BROWNE_THERAPY_VERSION' ) ) {
+if ( ! defined( 'EMMABROWNETHERAPY_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'EMMA_BROWNE_THERAPY_VERSION', '1.0.0' );
+	define( 'EMMABROWNETHERAPY_VERSION', '1.0.0' );
 }
 
 /**
@@ -138,10 +138,10 @@ add_action( 'widgets_init', 'emmabrownetherapy_widgets_init' );
  * Enqueue scripts and styles.
  */
 function emmabrownetherapy_scripts() {
-	wp_enqueue_style( 'emmabrownetherapy-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), EMMA_BROWNE_THERAPY_VERSION );
-	wp_enqueue_style( 'emmabrownetherapy-style', get_stylesheet_uri(), array(), EMMA_BROWNE_THERAPY_VERSION );
+	wp_enqueue_style( 'emmabrownetherapy-fonts', get_template_directory_uri() . '/assets/fonts/fonts.css', array(), EMMABROWNETHERAPY_VERSION );
+	wp_enqueue_style( 'emmabrownetherapy-style', get_stylesheet_uri(), array(), EMMABROWNETHERAPY_VERSION );
 
-	wp_enqueue_script( 'emmabrownetherapy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), EMMA_BROWNE_THERAPY_VERSION, true );
+	wp_enqueue_script( 'emmabrownetherapy-navigation', get_template_directory_uri() . '/js/navigation.js', array(), EMMABROWNETHERAPY_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
