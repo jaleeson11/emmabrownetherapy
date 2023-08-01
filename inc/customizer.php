@@ -56,6 +56,6 @@ function emmabrownetherapy_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function emmabrownetherapy_customize_preview_js() {
-	wp_enqueue_script( 'emmabrownetherapy-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), EMMA_BROWNE_THERAPY_VERSION, true );
+	wp_enqueue_script( 'emmabrownetherapy-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), EMMABROWNETHERAPY_VERSION, true );
 }
 add_action( 'customize_preview_init', 'emmabrownetherapy_customize_preview_js' );
