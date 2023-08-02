@@ -26,9 +26,52 @@
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'emmabrownetherapy' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
+		<div class="container">
+			<div class="site-header__inner">
+				<div class="site-branding">
+					<?php the_custom_logo(); ?>
+				</div><!-- .site-branding -->
+
+				<nav id="site-navigation" class="main-navigation">
+					<span class="menu-toggle" aria-controls="primary-menu" aria-expanded="false" role="button">
+						<span class="menu-burger">
+							<span class="menu-bar"></span>
+							<span class="menu-bar"></span>
+							<span class="menu-bar"></span>
+						</span>
+						<?php esc_html_e( 'Menu', 'emmabrownetherapy' ); ?>
+					</span>
+					<div class="main-navigation__inner">
+						<ul class="main-navigation__top">
+							<li class="main-navigation__top__item">
+								<?php $admin_email = get_option( 'admin_email' ); ?>
+								<a href="mailto: <?php echo $admin_email; ?>" class="main-navigation__top__link">
+									<span class="dashicons dashicons-email"></span>
+									<?php echo $admin_email; ?>
+								</a>
+							</li>
+							<li class="main-navigation__top__item">
+								<a href="tel: 07710496609" class="main-navigation__top__link">
+									<span class="dashicons dashicons-phone"></span>
+									<?php esc_html_e( '7710496609', 'emmabrownetherapy' ); ?>
+								</a>
+							</li>
+						</ul>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'menu-1',
+								'menu_id'        => 'primary-menu',
+							)
+						);
+						?>
+					</div>
+				</nav><!-- #site-navigation -->
+			</div>
+		</div><!-- .container -->
+
+		<div class="hero">
 			<?php
-			the_custom_logo();
 			if ( is_front_page() && is_home() ) :
 				?>
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -43,17 +86,5 @@
 				?>
 				<p class="site-description"><?php echo $emmabrownetherapy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
-		</div><!-- .site-branding -->
-
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'emmabrownetherapy' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+		</div>
 	</header><!-- #masthead -->
