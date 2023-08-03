@@ -57,16 +57,16 @@ function emmabrownetherapy_hero() {
 			if ( is_front_page() ) : 
 				?>
 				<h1 class="hero__sub-heading small">
-					<?php echo get_bloginfo( 'name' ); ?>
+					<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 				</h1>
 				<p class="hero__heading h1">
-					<?php echo get_bloginfo( 'description' ); ?>
+					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
 				</p><!-- .hero__heading -->
 				<?php
 			else :
 				?>
 				<small class="hero__sub-heading">
-					<?php echo get_bloginfo( 'description' ); ?>
+					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
 				</small>
 				<h1 class="hero__heading">
 					<?php echo wp_kses_post( get_the_title() ); ?>

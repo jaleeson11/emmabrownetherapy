@@ -44,7 +44,7 @@
 					<div class="main-navigation__inner">
 						<ul class="main-navigation__top">
 							<li class="main-navigation__top__item">
-								<?php $admin_email = get_option( 'admin_email' ); ?>
+								<?php $admin_email = esc_html( get_option( 'admin_email' ) ); ?>
 								<a href="mailto: <?php echo $admin_email; ?>" class="main-navigation__top__link">
 									<span class="dashicons dashicons-email"></span>
 									<?php echo $admin_email; ?>
@@ -53,7 +53,7 @@
 							<li class="main-navigation__top__item">
 								<a href="tel: 07710496609" class="main-navigation__top__link">
 									<span class="dashicons dashicons-phone"></span>
-									<?php esc_html_e( '07710496609', 'emmabrownetherapy' ); ?>
+									<?php esc_html( '07710496609' ); ?>
 								</a>
 							</li>
 						</ul>
