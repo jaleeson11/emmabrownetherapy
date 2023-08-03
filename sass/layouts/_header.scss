@@ -15,3 +15,9 @@
         justify-content: space-between;
     }
 }
+
+@include media-breakpoint-down(lg) {
+    .site-header .container {
+        padding: 0;
+    }
+}

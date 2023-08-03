@@ -82,7 +82,6 @@
 	.main-navigation {
 		width: 100%;
 		background-color: $color__brand-green-dark;
-		border-radius: .5rem;
 		margin-top: var(--space-sm);
 
 		.menu-toggle {
@@ -110,12 +109,16 @@
 			flex-direction: column-reverse;
 			text-align: center;
 
-			.main-navigation__top__link {
-				justify-content: center;
+			.main-navigation__top {
+				margin-bottom: var(--space-sm);
+
+				.main-navigation__top__link {
+					justify-content: center;
+				}
 			}
 
 			.menu {
-				margin-bottom: var(--space-sm);
+				margin: var(--space-sm) 0;
 			}
 		}
 
@@ -163,8 +166,18 @@
 			&:not(.sub-menu) {
 				display: flex;
 				
-				> * + * {
-					margin-left: var(--space-lg);
+				> li {
+					+ * {
+						margin-left: var(--space-lg);
+					}
+
+					> a {
+						transition: color .3s ease;
+
+						&:hover {
+							color: $color__brand-yellow;
+						}
+					}
 				}
 			}
 	
