@@ -53,7 +53,7 @@
 							<li class="main-navigation__top__item">
 								<a href="tel: 07710496609" class="main-navigation__top__link">
 									<span class="dashicons dashicons-phone"></span>
-									<?php esc_html_e( '7710496609', 'emmabrownetherapy' ); ?>
+									<?php esc_html_e( '07710496609', 'emmabrownetherapy' ); ?>
 								</a>
 							</li>
 						</ul>
