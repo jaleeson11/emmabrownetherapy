@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-md) 0;
+    padding: var(--space-sm) 0;
 
     .site-branding img {
         width: 6.7rem;
@@ -19,5 +19,10 @@
 @include media-breakpoint-down(lg) {
     .site-header .container {
         padding: 0;
+        max-width: 100%;
+
+        .site-header__inner {
+            padding-bottom: 0;
+        }
     }
 }

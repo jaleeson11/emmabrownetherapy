@@ -67,24 +67,8 @@
 						?>
 					</div>
 				</nav><!-- #site-navigation -->
-			</div>
+			</div><!-- .site-header__inner -->
 		</div><!-- .container -->
 
-		<div class="hero">
-			<?php
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$emmabrownetherapy_description = get_bloginfo( 'description', 'display' );
-			if ( $emmabrownetherapy_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $emmabrownetherapy_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div>
+		<?php emmabrownetherapy_hero(); ?>
 	</header><!-- #masthead -->

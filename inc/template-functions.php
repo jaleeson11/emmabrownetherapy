@@ -35,3 +35,48 @@ function emmabrownetherapy_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'emmabrownetherapy_pingback_header' );
+
+/**
+ * Returns html for page hero.
+ * 
+ * @return bool.
+ */
+function emmabrownetherapy_hero() {
+	$image_url = wp_get_attachment_image_url( get_post_thumbnail_id(), 'large' );
+	
+	if ( ! $image_url ) {
+		$image_url = get_template_directory_uri() . '/assets/images/hero-default.jpg';
+	} 
+	?>
+
+	<div class="hero" style="background-image: url( '<?php echo esc_url( $image_url ); ?>' );">
+
+		<div class="hero__content">
+
+			<?php 
+			if ( is_front_page() ) : 
+				?>
+				<h1 class="hero__sub-heading small">
+					<?php echo get_bloginfo( 'name' ); ?>
+				</h1>
+				<p class="hero__heading h1">
+					<?php echo get_bloginfo( 'description' ); ?>
+				</p><!-- .hero__heading -->
+				<?php
+			else :
+				?>
+				<small class="hero__sub-heading">
+					<?php echo get_bloginfo( 'description' ); ?>
+				</small>
+				<h1 class="hero__heading">
+					<?php echo wp_kses_post( get_the_title() ); ?>
+				</h1>
+				<?php
+			endif;
+			?>
+
+		</div><!-- .hero__content -->
+
+	</div><!-- .hero -->
+	<?php
+}
