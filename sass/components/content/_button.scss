@@ -33,5 +33,6 @@ input[type="submit"],
 	&:focus {
 		outline: 2px dotted $color__brand-yellow;
 		outline-offset: .2rem;
+        border-color: $color__brand-yellow;
 	}
 }
