@@ -14,8 +14,8 @@ a {
 	}
 
 	&:focus {
-		outline: thin solid $color__brand-yellow;
-		outline-offset: 2px;
+		outline: 2px dotted $color__brand-yellow;
+		outline-offset: .2rem;
 	}
 
 	&:hover,
