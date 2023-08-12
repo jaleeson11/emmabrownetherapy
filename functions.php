@@ -190,3 +190,19 @@ and offer a safe, welcoming space where they can feel valued and listened to. I 
 
 	return $defaults[$setting];
 }
+
+/**
+ * Disable search functionality.
+ */
+function emmabrownetherapy_disable_search( $query, $error = true ) {
+	if ( is_search() ) {
+		$query->is_search = false;   
+		$query->query_vars['s'] = false;
+		$query->query['s'] = false;
+
+		if ( $error ) {
+			$query->is_404 = true;
+		}
+	}
+}
+add_action( 'parse_query', 'emmabrownetherapy_disable_search' ); 
