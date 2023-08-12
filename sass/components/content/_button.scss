@@ -1,0 +1,37 @@
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.site-button {
+	border-radius: .5rem;
+	border: 2px solid $color__brand-yellow;
+	background: none;
+	color: $color__brand-yellow;
+	line-height: 1.15;
+	font-size: 1rem;
+	font-family: 'WorkSans-Regular';
+	text-align: center;
+	padding: var(--space-sm) var(--space-md);
+    margin-top: var(--space-sm);
+	min-width: 10ch;
+	min-height: 2.5rem;
+	cursor: pointer;
+	touch-action: manipulation;
+	transition: all .3s ease;
+
+	&:hover {
+		background-color: $color__brand-yellow;
+		color: $color__brand-green;
+        text-decoration: none;
+	}
+
+	&:focus:not(:focus-visible) {
+		outline: none;
+	}
+
+	&:active,
+	&:focus {
+		outline: 2px solid $color__brand-yellow;
+		outline-offset: .2rem;
+	}
+}
