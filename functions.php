@@ -132,7 +132,7 @@ function emmabrownetherapy_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'emmabrownetherapy_widgets_init' );
+// add_action( 'widgets_init', 'emmabrownetherapy_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
