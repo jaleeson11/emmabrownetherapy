@@ -66,7 +66,7 @@ function emmabrownetherapy_hero() {
 			else :
 				?>
 				<small class="hero__sub-heading">
-					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
+					<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
 				</small>
 				<h1 class="hero__heading">
 					<?php echo wp_kses_post( get_the_title() ); ?>
