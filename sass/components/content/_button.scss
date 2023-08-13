@@ -4,7 +4,8 @@ input[type="reset"],
 input[type="submit"],
 .site-button {
 	border-radius: .5rem;
-	border: 2px solid $color__brand-yellow;
+	border: 2px solid;
+    border-color: $color__brand-yellow;
 	background: none;
 	color: $color__brand-yellow;
 	line-height: 1.15;
@@ -22,7 +23,6 @@ input[type="submit"],
 	&:hover {
 		background-color: $color__brand-yellow;
 		color: $color__brand-green;
-        text-decoration: none;
 	}
 
 	&:focus:not(:focus-visible) {
@@ -31,8 +31,30 @@ input[type="submit"],
 
 	&:active,
 	&:focus {
-		outline: 2px dotted $color__brand-yellow;
+		outline: 2px dotted;
+        outline-color: $color__brand-yellow;
 		outline-offset: .2rem;
-        border-color: $color__brand-yellow;
 	}
+
+    &:hover,
+    &:active,
+	&:focus {
+        border-color: $color__brand-yellow;
+        text-decoration: none;
+    }
+
+    &.site-button--alt {
+        border-color: $color__brand-green-dark;
+        color: $color__brand-green-dark;
+
+        &:hover {
+            background-color: $color__brand-green-dark;
+            color: $color__brand-grey;
+        }
+
+        &:active,
+        &:focus {
+            outline-color: $color__brand-green-dark;
+        }
+    }
 }
