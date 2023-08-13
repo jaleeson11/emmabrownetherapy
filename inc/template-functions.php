@@ -112,3 +112,26 @@ function emmabrownetherapy_image_cta( $section )
 	</div>
 	<?php
 }
+
+/**
+ * Returns html for banner component.
+ */
+function emmabrownetherapy_banner( $section )
+{
+	?>
+	<div class="banner">
+		<div class="container">
+			<h2 class="banner__heading">
+				<?php echo esc_html_e( get_theme_mod( $section . '_heading', emmabrownetherapy_theme_defaults( $section . '_heading' ) ), 'emmabrownetherapy' ); ?>
+			</h2>
+			<p class="banner__text">
+				<?php echo esc_html_e( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
+			</p>
+			<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( $section . '_button_link', get_page_by_title( ucwords( str_replace( '_', ' ', $section ) ) )->ID ) ) ); ?>" class="site-button site-button--alt">
+				<?php echo esc_html_e( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
+			</a>
+		</div>
+		<span class="banner__image" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/banner-background.png' ); ?>');"></span>
+	</div>
+	<?php
+}
