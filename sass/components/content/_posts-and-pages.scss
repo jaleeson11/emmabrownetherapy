@@ -13,11 +13,29 @@
 
 .page-content,
 .entry-content,
-.entry-summary {
-	margin: 1.5em 0 0;
+.entry-summary,
+.custom-content {
+	margin-top: var(--space-xl);
+}
+
+.custom-content > * + * {
+	margin-top: var(--space-xl);
 }
 
 .page-links {
 	clear: both;
 	margin: 0 0 1.5em;
+}
+
+@include media-breakpoint-up(md) {
+    .page-content,
+	.entry-content,
+	.entry-summary,
+	.custom-content {
+		margin-top: var(--space-xxl);
+	}
+
+	.custom-content > * + * {
+		margin-top: var(--space-xxl);
+	}
 }
