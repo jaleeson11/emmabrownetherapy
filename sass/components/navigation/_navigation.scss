@@ -172,10 +172,22 @@
 					}
 
 					> a {
-						transition: color .3s ease;
+						&::before {
+							content: '';
+							position: absolute;
+							transition: transform .3s ease;
+							left: 0;
+							bottom: 0;
+							width: 100%;
+							height: 2px;
+							background-color: $color__brand-yellow;
+							transform: scaleX(0)
+						}
 
-						&:hover {
-							color: $color__brand-yellow;
+						@media (hover: hover) {
+							&:hover::before {
+								transform: scaleX(1);
+							}
 						}
 					}
 				}
