@@ -80,3 +80,35 @@ function emmabrownetherapy_hero() {
 	</div><!-- .hero -->
 	<?php
 }
+
+/**
+ * Returns html for image cta component.
+ */
+function emmabrownetherapy_image_cta( $section )
+{
+	$image_url = get_theme_mod( $section . '_image' );
+	$image_id  = attachment_url_to_postid( $image_url );
+	$image_alt = array(
+		'about_me' => 'Portrait of Emma with a warm smile'
+	)
+	?>
+	<div class="image-cta">
+		<div class="image-cta__content">
+			<h2 class="image-cta__heading">
+				<?php echo esc_html_e( get_theme_mod( $section . '_heading', emmabrownetherapy_theme_defaults( $section . '_heading' ) ), 'emmabrownetherapy' ); ?>
+			</h2>
+			<p class="image-cta__text">
+				<?php echo esc_html_e( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
+			</p>
+			<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( $section . '_button_link', get_page_by_title( ucwords( str_replace( '_', ' ', $section ) ) )->ID ) ) ); ?>" class="site-button">
+				<?php echo esc_html_e( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
+			</a>
+		</div>
+		<?php if ( $image_url ) : ?>
+			<img class="image-cta__image" src="<?php echo esc_url( wp_get_attachment_image_url( $image_id, 'medium_large' ) ); ?>" alt="<?php echo get_post_meta( $image_id, '_wp_attachment_image_alt', true ); ?>">
+		<?php else : ?>
+			<img class="image-cta__image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . str_replace( '_', '-', $section ) . '-default.jpg' ); ?>" alt="<?php echo $image_alt[$section]; ?>">
+		<?php endif; ?>
+	</div>
+	<?php
+}
