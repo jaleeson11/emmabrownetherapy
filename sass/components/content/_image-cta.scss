@@ -37,5 +37,14 @@
             max-width: 450px;
             min-width: 300px;
 		}
+
+        &--reverse {
+			flex-direction: row;
+
+			.image-cta__content {
+				margin-left: 0;
+				margin-right: var(--space-xl);
+			}
+		}
     }
 }

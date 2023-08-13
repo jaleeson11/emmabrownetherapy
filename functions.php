@@ -189,7 +189,10 @@ and offer a safe, welcoming space where they can feel valued and listened to. I 
 		'my_approach_heading'  => 'Counselling and psychotherapy for young people from the age of 10 to 24',
 		'my_approach_text'     => 'I have a calm and gentle approach and my counselling and psychotherapy sessions offer a safe, compassionate space for young people to share and explore their feelings, difficulties and experiences.  
 		Play and creative media are available for all clients, whatever their age, offering many different ways for them to express and communicate their internal world and emotions.',
-		'my_approach_button_text' => 'Learn More About My Approach'
+		'my_approach_button_text' => 'Learn More About My Approach',
+		'location_heading'     => 'My Practice Location',
+		'location_text'        => 'I work in-person in a comfortable room at the Greenwood Centre in Hampton Hill (1a School Road, Hampton Hill, TW12 1QL).',
+		'location_button_text' => 'Inside My Therapy Practice',
 	);
 
 	return $defaults[$setting];
