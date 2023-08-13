@@ -169,5 +169,88 @@ function emmabrownetherapy_custom_sections( $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_section(
+		'my_approach',
+		array(
+			'title' => 'My Approach',
+			'panel' => 'theme_options',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'my_approach_heading',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'my_approach_heading' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'my_approach_heading',
+			array(
+				'type'     => 'text',
+				'section'  => 'my_approach',
+				'label'    => 'Heading',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'my_approach_text',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'my_approach_text' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'my_approach_text',
+			array(
+				'type'     => 'textarea',
+				'section'  => 'my_approach',
+				'label'    => 'Text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'my_approach_button_text',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'my_approach_button_text' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'my_approach_button_text',
+			array(
+				'type'     => 'text',
+				'section'  => 'my_approach',
+				'label'    => 'Button Text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'my_approach_button_link' );
+	
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'my_approach_button_link',
+			array(
+				'type'        => 'dropdown-pages',
+				'section'     => 'my_approach',
+				'label'       => 'Button Link',
+				'description' => 'The page that the button links to',
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'emmabrownetherapy_custom_sections' );

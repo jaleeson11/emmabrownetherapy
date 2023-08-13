@@ -20,7 +20,7 @@ get_header();
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
+			if ( ! is_front_page() ) :
 				?>
 				<header>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
@@ -51,38 +51,21 @@ get_header();
 		
 		?>
 
-		<div class="container">
+		<div class="custom-content">
 
 			<section>
-				<div class="image-cta">
-					<?php
-					$image_url = get_theme_mod( 'about_me_image' );
-					$image_id  = attachment_url_to_postid( $image_url );
-					?>
-
-					<div class="image-cta__content">
-						<h2 class="image-cta__heading">
-							<?php echo esc_html_e( get_theme_mod( 'about_me_heading', emmabrownetherapy_theme_defaults( 'about_me_heading' ) ), 'emmabrownetherapy' ); ?>
-						</h2>
-						<p class="image-cta__text">
-							<?php echo esc_html_e( get_theme_mod( 'about_me_text', emmabrownetherapy_theme_defaults( 'about_me_text' ) ), 'emmabrownetherapy' ); ?>
-						</p>
-						<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( 'about_me_button_link', get_page_by_title( 'About Me' )->ID ) ) ); ?>" class="site-button">
-							<?php echo esc_html_e( get_theme_mod( 'about_me_button_text', emmabrownetherapy_theme_defaults( 'about_me_button_text' ) ), 'emmabrownetherapy' ); ?>
-						</a>
-					</div>
-					<?php if ( $image_url ) : ?>
-						<img class="image-cta__image" src="<?php echo esc_url( wp_get_attachment_image_url( $image_id, 'medium_large' ) ); ?>" alt="<?php echo get_post_meta( $image_id, '_wp_attachment_image_alt', true ); ?>">
-					<?php else : ?>
-						<img class="image-cta__image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/about-me-default.jpg' ); ?>" alt="Portrait of Emma with a warm smile">
-					<?php endif; ?>
+				<div class="container">
+					<?php emmabrownetherapy_image_cta( 'about_me' ); ?>
 				</div>
 			</section>
-			
-		</div>
+
+			<section>
+				<?php emmabrownetherapy_banner( 'my_approach' ); ?>
+			</section>
+				
+		</div><!-- .custom-content -->
 
 	</main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();
