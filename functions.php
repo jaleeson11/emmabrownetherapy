@@ -212,4 +212,47 @@ function emmabrownetherapy_disable_search( $query, $error = true ) {
 		}
 	}
 }
-add_action( 'parse_query', 'emmabrownetherapy_disable_search' ); 
+add_action( 'parse_query', 'emmabrownetherapy_disable_search' );
+
+/**
+ * Disable comments.
+ */
+function emmabrownetherapy_disable_comments() {
+	// Redirect any user trying to access comments page
+    global $pagenow;
+     
+    if ( $pagenow === 'edit-comments.php' ) {
+        wp_safe_redirect( admin_url() );
+        exit;
+    }
+ 
+    // Remove comments metabox from dashboard
+    remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+ 
+    // Disable support for comments and trackbacks in post types
+    foreach ( get_post_types() as $post_type ) {
+        if ( post_type_supports( $post_type, 'comments' ) ) {
+            remove_post_type_support( $post_type, 'comments' );
+            remove_post_type_support( $post_type, 'trackbacks' );
+        }
+    }
+}
+add_action( 'admin_init', 'emmabrownetherapy_disable_comments' );
+
+/**
+ * Remove comments page in menu.
+ */
+function emmabrownetherapy_remove_comments_from_menu() {
+	remove_menu_page( 'edit-comments.php' );
+}
+add_action( 'admin_menu', 'emmabrownetherapy_remove_comments_from_menu' );
+
+/**
+ * Remove comments links from admin bar.
+ */
+function emmabrownetherapy_remove_comments_from_admin_bar() {
+	if ( is_admin_bar_showing() ) {
+        remove_action( 'admin_bar_menu', 'wp_admin_bar_comments_menu', 60 );
+    }
+}
+add_action( 'init', 'emmabrownetherapy_remove_comments_from_admin_bar' );
