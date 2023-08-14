@@ -267,3 +267,19 @@ function emmabrownetherapy_redirect() {
 	}
 }
 add_action( 'template_redirect', 'emmabrownetherapy_redirect' );
+
+/**
+ * Disable tags.
+ */
+function emmabrownetherapy_disable_tags() {
+    unregister_taxonomy_for_object_type( 'post_tag', 'post' );
+}
+add_action('init', 'emmabrownetherapy_disable_tags');
+
+/**
+ * Disable categories.
+ */
+function emmabrownetherapy_disable_categories() {
+    unregister_taxonomy_for_object_type( 'category', 'post' );
+}
+add_action('init', 'emmabrownetherapy_disable_categories');
