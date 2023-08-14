@@ -256,3 +256,14 @@ function emmabrownetherapy_remove_comments_from_admin_bar() {
     }
 }
 add_action( 'init', 'emmabrownetherapy_remove_comments_from_admin_bar' );
+
+/**
+ * Redirect templates.
+ */
+function emmabrownetherapy_redirect() {
+	if ( is_author() || is_tag() || is_archive() || is_attachment() ) {
+		wp_safe_redirect( home_url(), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'emmabrownetherapy_redirect' );
