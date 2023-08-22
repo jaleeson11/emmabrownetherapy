@@ -1,0 +1,10 @@
+.site-footer {
+    background-color: $color__brand-green-dark;
+    padding: var(--space-xs);
+    margin-top: var(--space-xxl);
+    text-align: center;
+
+    .site-footer__copyright {
+        color: #fff;
+    }
+}
