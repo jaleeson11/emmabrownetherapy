@@ -68,6 +68,10 @@ get_header();
 					<?php emmabrownetherapy_image_cta( 'location' ); ?>
 				</div>
 			</section>
+
+			<section>
+				<?php emmabrownetherapy_banner( 'sessions_fees' ); ?>
+			</section>
 				
 		</div><!-- .custom-content -->
 

@@ -193,6 +193,9 @@ and offer a safe, welcoming space where they can feel valued and listened to. I 
 		'location_heading'     => 'My Practice Location',
 		'location_text'        => 'I work in-person in a comfortable room at the Greenwood Centre in Hampton Hill (1a School Road, Hampton Hill, TW12 1QL).',
 		'location_button_text' => 'Inside My Therapy Practice',
+		'sessions_fees_heading'  => 'Sessions & Fees',
+		'sessions_fees_text'     => 'I provide weekly 45 minute sessions. These sessions can be short-term or over a longer period for more complex difficulties, meeting the individual needs of each young person.',
+		'sessions_fees_button_text' => 'Booking Process and Fees Details',
 	);
 
 	return $defaults[$setting];

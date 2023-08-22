@@ -333,5 +333,88 @@ function emmabrownetherapy_custom_sections( $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_section(
+		'sessions_fees',
+		array(
+			'title' => 'Sessions & Fees',
+			'panel' => 'theme_options',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'sessions_fees_heading',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'sessions_fees_heading' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sessions_fees_heading',
+			array(
+				'type'     => 'text',
+				'section'  => 'sessions_fees',
+				'label'    => 'Heading',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'sessions_fees_text',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'sessions_fees_text' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sessions_fees_text',
+			array(
+				'type'     => 'textarea',
+				'section'  => 'sessions_fees',
+				'label'    => 'Text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'sessions_fees_button_text',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'sessions_fees_button_text' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sessions_fees_button_text',
+			array(
+				'type'     => 'text',
+				'section'  => 'sessions_fees',
+				'label'    => 'Button Text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'sessions_fees_button_link' );
+	
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'sessions_fees_button_link',
+			array(
+				'type'        => 'dropdown-pages',
+				'section'     => 'sessions_fees',
+				'label'       => 'Button Link',
+				'description' => 'The page that the button links to',
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'emmabrownetherapy_custom_sections' );
