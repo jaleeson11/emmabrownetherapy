@@ -182,8 +182,8 @@ require get_template_directory() . '/inc/customizer.php';
  */
 function emmabrownetherapy_theme_defaults( $setting ) {
 	$defaults = array(
-		'about_me_heading'     => 'Hey, I\'m Emma',
-		'about_me_text' 	   => 'I support and empower young people through difficult times in their lives
+		'about_me_heading'     => 'Welcome',
+		'about_me_text' 	   => 'Hey, I\'m Emma. I support and empower young people through difficult times in their lives
 and offer a safe, welcoming space where they can feel valued and listened to. I am professionally qualified, holding an MA in integrative counselling and psychotherapy for children, adolescents and families from the University of Roehampton (Distinction). I am a registered Member of the British Association of Counselling and Psychotherapy (BACP).',
 		'about_me_button_text' => 'Explore My Story',
 		'my_approach_heading'  => 'Counselling and psychotherapy for young people from the age of 10 to 24',
