@@ -72,6 +72,13 @@ function emmabrownetherapy_hero() {
 					<?php echo wp_kses_post( get_the_title() ); ?>
 				</h1>
 				<?php
+				if ( 'post' === get_post_type() ) :
+					?>
+					<div class="entry-meta">
+						<?php emmabrownetherapy_posted_on(); ?>
+					</div><!-- .entry-meta -->
+					<?php
+				endif;
 			endif;
 			?>
 
