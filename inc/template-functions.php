@@ -132,6 +132,10 @@ function emmabrownetherapy_image_cta( $section )
  */
 function emmabrownetherapy_banner( $section )
 {
+	$banner_image_right = array(
+		'my_approach' => false,
+		'sessions_fees' => true
+	);
 	?>
 	<div class="banner">
 		<div class="container">
@@ -145,7 +149,7 @@ function emmabrownetherapy_banner( $section )
 				<?php echo esc_html_e( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
 			</a>
 		</div>
-		<span class="banner__image" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/banner-background.png' ); ?>');"></span>
+		<span class="banner__image <?php echo $banner_image_right[$section] ? 'banner__image--right' : ''; ?>" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/banner-background.png' ); ?>');"></span>
 	</div>
 	<?php
 }

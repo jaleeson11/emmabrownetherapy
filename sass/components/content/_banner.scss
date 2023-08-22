@@ -32,7 +32,9 @@
 @include media-breakpoint-up(md) {
 	.banner {
 		&__image {
-            background-size: 50%;
+            &--right {
+                background-position: right;
+            }
         }
 	}
 }
