@@ -289,3 +289,36 @@ function emmabrownetherapy_disable_categories() {
     unregister_taxonomy_for_object_type( 'category', 'post' );
 }
 add_action('init', 'emmabrownetherapy_disable_categories');
+
+/**
+ * Adds phone number field to user profile.
+ */
+function emmabrownetherapy_phone_field( $user ) { 
+	?>
+	<h3>Contact Info</h3>
+    <table class="form-table">
+		<tr>
+            <th>
+				<label for="phone">Phone Number</label>
+			</th>
+            <td>
+            	<input type="tel" name="phone" id="phone" value="<?php echo esc_attr( get_the_author_meta( 'phone', $user->ID ) ); ?>" class="regular-text" /><br />
+            </td>
+		</tr>
+	</table>
+	<?php
+}
+add_action( 'show_user_profile', 'emmabrownetherapy_phone_field' );
+add_action( 'edit_user_profile', 'emmabrownetherapy_phone_field' );
+
+/**
+ * Saves phone number field to user profile.
+ */
+function emmabrownetherapy_phone_field_save( $user_id ) {
+	if ( !current_user_can( 'edit_user', $user_id ) )
+		return false;
+
+	update_usermeta( $user_id, 'phone', $_POST['phone'] );
+}
+add_action( 'personal_options_update', 'emmabrownetherapy_phone_field_save' );
+add_action( 'edit_user_profile_update', 'emmabrownetherapy_phone_field_save' );

@@ -55,12 +55,19 @@
 									<?php echo $admin_email; ?>
 								</a>
 							</li>
-							<li class="main-navigation__top__item">
-								<a href="tel: 07710496609" class="main-navigation__top__link">
-									<span class="dashicons dashicons-phone"></span>
-									<?php esc_html( '07710496609' ); ?>
-								</a>
-							</li>
+							<?php
+							$phone = get_the_author_meta( 'phone', 1 );
+							if ( !is_null( $phone ) ) :
+								?>
+								<li class="main-navigation__top__item">
+									<a href="tel: <?php echo esc_html( $phone ); ?>" class="main-navigation__top__link">
+										<span class="dashicons dashicons-phone"></span>
+										<?php echo esc_html( $phone ); ?>
+									</a>
+								</li>
+								<?php
+							endif;
+							?>
 						</ul>
 						<?php
 						wp_nav_menu(
