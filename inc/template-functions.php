@@ -145,7 +145,7 @@ function emmabrownetherapy_banner( $section )
 			<p class="banner__text">
 				<?php echo esc_html_e( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
 			</p>
-			<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( $section . '_button_link', get_page_by_title( ucwords( str_replace( '_', ' ', $section ) ) )->ID ) ) ); ?>" class="site-button site-button--alt">
+			<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( $section . '_button_link', get_page_by_path( str_replace( '_', '-', $section ) )->ID ) ) ); ?>" class="site-button site-button--alt">
 				<?php echo esc_html_e( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
 			</a>
 		</div>
