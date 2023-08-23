@@ -195,7 +195,10 @@ and offer a safe, welcoming space where they can feel valued and listened to. I 
 		'location_button_text' => 'Inside My Therapy Practice',
 		'sessions_fees_heading'  => 'Sessions & Fees',
 		'sessions_fees_text'     => 'I provide weekly 45 minute sessions. These sessions can be short-term or over a longer period for more complex difficulties, meeting the individual needs of each young person.',
-		'sessions_fees_button_text' => 'Booking Process and Fees Details',
+		'sessions_fees_button_text' => 'Booking Process and Fees',
+		'contact_heading'     => 'Contact Me',
+		'contact_text'        => 'Please get in touch via telephone or email to arrange a free 30 minute consultation to discuss the young person’s needs and ask any questions they or you may have about the counselling and psychotherapy process.',
+		'contact_button_text' => 'Get In Touch',
 	);
 
 	return $defaults[$setting];

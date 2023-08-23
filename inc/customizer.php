@@ -416,5 +416,90 @@ function emmabrownetherapy_custom_sections( $wp_customize ) {
 			)
 		)
 	);
+
+	$wp_customize->add_section(
+		'contact',
+		array(
+			'title' => 'Contact',
+			'panel' => 'theme_options',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'contact_heading',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'contact_heading' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'contact_heading',
+			array(
+				'type'     => 'text',
+				'section'  => 'contact',
+				'label'    => 'Heading',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'contact_text',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'contact_text' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'contact_text',
+			array(
+				'type'     => 'textarea',
+				'section'  => 'contact',
+				'label'    => 'Text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'contact_button_text',
+		array(
+			'default'           => emmabrownetherapy_theme_defaults( 'contact_button_text' ),
+			'sanitize_callback' => 'sanitize_text_field',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'contact_button_text',
+			array(
+				'type'     => 'text',
+				'section'  => 'contact',
+				'label'    => 'Button Text',
+			)
+		)
+	);
+
+	$wp_customize->add_setting( 'contact_image' );
+	
+	$wp_customize->add_control(
+		new WP_Customize_Cropped_Image_Control(
+			$wp_customize,
+			'contact_image',
+			array(
+				'section'     => 'contact',
+				'label'       => 'Image',
+				'height'      => 500,
+				'width'       => 500,
+				'flex_width'  => true,
+				'flex_height' => true,
+			)
+		)
+	);
 }
 add_action( 'customize_register', 'emmabrownetherapy_custom_sections' );

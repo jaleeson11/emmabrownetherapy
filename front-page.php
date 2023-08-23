@@ -72,6 +72,12 @@ get_header();
 			<section>
 				<?php emmabrownetherapy_banner( 'sessions_fees' ); ?>
 			</section>
+
+			<section>
+				<div class="container">
+					<?php emmabrownetherapy_image_cta( 'contact' ); ?>
+				</div>
+			</section>
 				
 		</div><!-- .custom-content -->
 
