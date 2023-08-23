@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-31T18:16:09+02:00\n"
+"POT-Creation-Date: 2023-08-23T12:12:44+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.8.1\n"
 "X-Domain: emmabrownetherapy\n"
@@ -68,20 +68,6 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:16
-msgid "https://wordpress.org/"
-msgstr ""
-
-#. translators: %s: CMS name, i.e. WordPress.
-#: footer.php:19
-msgid "Proudly powered by %s"
-msgstr ""
-
-#. translators: 1: Theme name, 2: Theme author.
-#: footer.php:25
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
 #: functions.php:52
 msgid "Primary"
 msgstr ""
@@ -94,18 +80,74 @@ msgstr ""
 msgid "Add widgets here."
 msgstr ""
 
-#: header.php:26
+#: functions.php:185
+msgid "Welcome"
+msgstr ""
+
+#: functions.php:186
+msgid ""
+"Hey, I'm Emma. I support and empower young people through difficult times in their lives\n"
+"and offer a safe, welcoming space where they can feel valued and listened to. I am professionally qualified, holding an MA in integrative counselling and psychotherapy for children, adolescents and families from the University of Roehampton (Distinction). I am a registered Member of the British Association of Counselling and Psychotherapy (BACP)."
+msgstr ""
+
+#: functions.php:188
+msgid "Explore My Story"
+msgstr ""
+
+#: functions.php:189
+msgid "Counselling and psychotherapy for young people from the age of 10 to 24"
+msgstr ""
+
+#: functions.php:190
+msgid "I have a calm and gentle approach and my counselling and psychotherapy sessions offer a safe, compassionate space for young people to share and explore their feelings, difficulties and experiences. Play and creative media are available for all clients, whatever their age, offering many different ways for them to express and communicate their internal world and emotions."
+msgstr ""
+
+#: functions.php:191
+msgid "Learn More About My Approach"
+msgstr ""
+
+#: functions.php:192
+msgid "My Practice Location"
+msgstr ""
+
+#: functions.php:193
+msgid "I work in-person in a comfortable room at the Greenwood Centre in Hampton Hill (1a School Road, Hampton Hill, TW12 1QL)."
+msgstr ""
+
+#: functions.php:194
+msgid "Inside My Therapy Practice"
+msgstr ""
+
+#: functions.php:195
+msgid "Sessions & Fees"
+msgstr ""
+
+#: functions.php:196
+msgid "I provide weekly 45 minute sessions. These sessions can be short-term or over a longer period for more complex difficulties, meeting the individual needs of each young person."
+msgstr ""
+
+#: functions.php:197
+msgid "Booking Process and Fees"
+msgstr ""
+
+#: functions.php:198
+msgid "Contact Me"
+msgstr ""
+
+#: functions.php:199
+msgid "Please get in touch via telephone or email to arrange a free 30 minute consultation to discuss the young person’s needs and ask any questions they or you may have about the counselling and psychotherapy process."
+msgstr ""
+
+#: functions.php:200
+msgid "Get In Touch"
+msgstr ""
+
+#: header.php:31
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:49
-msgid "Primary Menu"
-msgstr ""
-
-#. translators: %s: post date.
-#: inc/template-tags.php:30
-msgctxt "post date"
-msgid "Posted on %s"
+#: header.php:47
+msgid "Menu"
 msgstr ""
 
 #. translators: %s: post author.
@@ -177,11 +219,11 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #: template-parts/content-page.php:25
-#: template-parts/content.php:53
+#: template-parts/content.php:36
 msgid "Pages:"
 msgstr ""
 
 #. translators: %s: Name of current post. Only visible to screen readers
-#: template-parts/content.php:40
+#: template-parts/content.php:23
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""

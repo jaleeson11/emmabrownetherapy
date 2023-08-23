@@ -97,31 +97,50 @@ function emmabrownetherapy_image_cta( $section )
 	$image_id  = attachment_url_to_postid( $image_url );
 	$image = array(
 		'about_me' => array(
-			'alt_text' => 'Portrait of Emma with a warm smile',
+			'alt_text' => __( 'Portrait of Emma with a warm smile', 'emmabrownetherapy' ),
 			'reverse'  => false
 		),
 		'location' => array(
-			'alt_text' => 'Cozy therapy practice room with comfortable seating',
+			'alt_text' => __( 'Cozy therapy practice room with comfortable seating', 'emmabrownetherapy' ),
 			'reverse'  => true
+		),
+		'contact' => array(
+			'alt_text' => __( 'A vibrant assortment of crayons, pencils, and pens.', 'emmabrownetherapy' ),
+			'reverse'  => false
 		),
 	)
 	?>
 	<div class="image-cta <?php echo $image[$section]['reverse'] ? 'image-cta--reverse' : ''; ?>">
 		<div class="image-cta__content">
 			<h2 class="image-cta__heading">
-				<?php echo esc_html_e( get_theme_mod( $section . '_heading', emmabrownetherapy_theme_defaults( $section . '_heading' ) ), 'emmabrownetherapy' ); ?>
+				<?php echo esc_html( get_theme_mod( $section . '_heading', emmabrownetherapy_theme_defaults( $section . '_heading' ) ), 'emmabrownetherapy' ); ?>
 			</h2>
 			<p class="image-cta__text">
-				<?php echo esc_html_e( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
+				<?php echo esc_html( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
 			</p>
+			<?php
+			if ( $section === 'contact' ) :
+				?>
+				<ul class="image-cta__contact">
+					<li>
+						<?php $admin_email = esc_html( get_option( 'admin_email' ) ); ?>
+						<a href="mailto: <?php echo $admin_email; ?>" class="main-navigation__top__link">
+							<span class="dashicons dashicons-email"></span>
+							<?php echo $admin_email; ?>
+						</a>
+					</li>
+				</ul>
+				<?php
+			endif;
+			?>	
 			<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( $section . '_button_link', get_page_by_title( ucwords( str_replace( '_', ' ', $section ) ) )->ID ) ) ); ?>" class="site-button">
-				<?php echo esc_html_e( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
+				<?php echo esc_html( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
 			</a>
 		</div>
 		<?php if ( $image_url ) : ?>
 			<img class="image-cta__image" src="<?php echo esc_url( wp_get_attachment_image_url( $image_id, 'medium_large' ) ); ?>" alt="<?php echo get_post_meta( $image_id, '_wp_attachment_image_alt', true ); ?>">
 		<?php else : ?>
-			<img class="image-cta__image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . str_replace( '_', '-', $section ) . '-default.jpg' ); ?>" alt="<?php echo $image[$section]['alt_text']; ?>">
+			<img class="image-cta__image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . str_replace( '_', '-', $section ) . '-default.jpg' ); ?>" alt="<?php echo esc_html( $image[$section]['alt_text'] ); ?>">
 		<?php endif; ?>
 	</div>
 	<?php
@@ -140,13 +159,13 @@ function emmabrownetherapy_banner( $section )
 	<div class="banner">
 		<div class="container">
 			<h2 class="banner__heading">
-				<?php echo esc_html_e( get_theme_mod( $section . '_heading', emmabrownetherapy_theme_defaults( $section . '_heading' ) ), 'emmabrownetherapy' ); ?>
+				<?php echo esc_html( get_theme_mod( $section . '_heading', emmabrownetherapy_theme_defaults( $section . '_heading' ) ), 'emmabrownetherapy' ); ?>
 			</h2>
 			<p class="banner__text">
-				<?php echo esc_html_e( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
+				<?php echo esc_html( get_theme_mod( $section . '_text', emmabrownetherapy_theme_defaults( $section . '_text' ) ), 'emmabrownetherapy' ); ?>
 			</p>
 			<a href="<?php echo esc_url( get_the_permalink( get_theme_mod( $section . '_button_link', get_page_by_path( str_replace( '_', '-', $section ) )->ID ) ) ); ?>" class="site-button site-button--alt">
-				<?php echo esc_html_e( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
+				<?php echo esc_html( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
 			</a>
 		</div>
 		<span class="banner__image <?php echo $banner_image_right[$section] ? 'banner__image--right' : ''; ?>" style="background-image: url('<?php echo esc_url( get_template_directory_uri() . '/assets/images/banner-background.png' ); ?>');"></span>
