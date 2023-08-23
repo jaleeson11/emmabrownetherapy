@@ -160,12 +160,16 @@ function emmabrownetherapy_custom_sections( $wp_customize ) {
 	$wp_customize->add_setting( 'about_me_image' );
 	
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new WP_Customize_Cropped_Image_Control(
 			$wp_customize,
 			'about_me_image',
 			array(
-				'section'  => 'about_me',
-				'label'    => 'Image',
+				'section'     => 'about_me',
+				'label'       => 'Image',
+				'height'      => 500,
+				'width'       => 500,
+				'flex_width'  => true,
+				'flex_height' => true,
 			)
 		)
 	);
@@ -324,12 +328,16 @@ function emmabrownetherapy_custom_sections( $wp_customize ) {
 	$wp_customize->add_setting( 'location_image' );
 	
 	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
+		new WP_Customize_Cropped_Image_Control(
 			$wp_customize,
 			'location_image',
 			array(
-				'section'  => 'location',
-				'label'    => 'Image',
+				'section'     => 'location',
+				'label'       => 'Image',
+				'height'      => 500,
+				'width'       => 500,
+				'flex_width'  => true,
+				'flex_height' => true,
 			)
 		)
 	);
