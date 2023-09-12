@@ -34,3 +34,13 @@
 		margin-top: var(--space-xxl);
 	}
 }
+
+@include media-breakpoint-down(sm) {
+	.wp-block-columns {
+		gap: 0;
+	}
+
+	.wp-block-columns--reverse-stack {
+		flex-direction: column-reverse;
+	}
+}
