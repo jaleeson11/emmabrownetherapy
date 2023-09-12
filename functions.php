@@ -183,21 +183,19 @@ require get_template_directory() . '/inc/customizer.php';
 function emmabrownetherapy_theme_defaults( $setting ) {
 	$defaults = array(
 		'about_me_heading'     => __( 'Welcome', 'emmabrownetherapy' ),
-		'about_me_text' 	   => __( 'Hey, I\'m Emma. I support and empower young people through difficult times in their lives
-and offer a safe, welcoming space where they can feel valued and listened to. I am professionally qualified, holding an MA in integrative counselling and psychotherapy for children, adolescents and families from the University of Roehampton (Distinction). I am a registered Member of the British Association of Counselling and Psychotherapy (BACP).', 'emmabrownetherapy' ),
-		'about_me_button_text' => __( 'Explore My Story', 'emmabrownetherapy' ),
+		'about_me_text' 	   => __( 'Hi, I\'m Emma. I am a professionally qualified counsellor and psychotherapist. I hold an MA in integrative counselling and psychotherapy for children, adolescents and families from the University of Roehampton (Distinction). I am a registered Member of the British Association of Counselling and Psychotherapy (BACP).', 'emmabrownetherapy' ),
+		'about_me_button_text' => __( 'Find Out More About Me', 'emmabrownetherapy' ),
 		'my_approach_heading'  => __( 'Counselling and psychotherapy for young people from the age of 10 to 24', 'emmabrownetherapy' ),
-		'my_approach_text'     => __( 'I have a calm and gentle approach and my counselling and psychotherapy sessions offer a safe, compassionate space for young people to share and explore their feelings, difficulties and experiences. Play and creative media are available for all clients, whatever their age, offering many different ways for them to express and communicate their internal world and emotions.', 'emmabrownetherapy' ),
+		'my_approach_text'     => __( 'My counselling and psychotherapy sessions offer a compassionate space for young people to share and explore their feelings, difficulties and experiences with play and creative media available for all.', 'emmabrownetherapy' ),
 		'my_approach_button_text' => __( 'Learn More About My Approach', 'emmabrownetherapy' ),
-		'location_heading'     => __( 'My Practice Location', 'emmabrownetherapy' ),
+		'location_heading'     => __( 'Location', 'emmabrownetherapy' ),
 		'location_text'        => __( 'I work in-person in a comfortable room at the Greenwood Centre in Hampton Hill (1a School Road, Hampton Hill, TW12 1QL).', 'emmabrownetherapy' ),
-		'location_button_text' => __( 'Inside My Therapy Practice', 'emmabrownetherapy' ),
+		'location_button_text' => __( 'More Info On My Practice Location', 'emmabrownetherapy' ),
 		'sessions_fees_heading'  => __( 'Sessions & Fees', 'emmabrownetherapy' ),
-		'sessions_fees_text'     => __( 'I provide weekly 45 minute sessions. These sessions can be short-term or over a longer period for more complex difficulties, meeting the individual needs of each young person.', 'emmabrownetherapy' ),
-		'sessions_fees_button_text' => __( 'Booking Process and Fees', 'emmabrownetherapy' ),
-		'contact_heading'     => __( 'Contact Me', 'emmabrownetherapy' ),
+		'sessions_fees_text'     => __( 'I offer weekly 45 minute sessions. The counselling and psychotherapy can be short-term or over a longer period for more complex difficulties, meeting the individual needs of each young person.', 'emmabrownetherapy' ),
+		'sessions_fees_button_text' => __( 'More About The Therapy Process & Fees', 'emmabrownetherapy' ),
+		'contact_heading'     => __( 'Contact', 'emmabrownetherapy' ),
 		'contact_text'        => __( 'Please get in touch via telephone or email to arrange a free 30 minute consultation to discuss the young person’s needs and ask any questions they or you may have about the counselling and psychotherapy process.', 'emmabrownetherapy' ),
-		'contact_button_text' => __( 'Get In Touch', 'emmabrownetherapy' ),
 	);
 
 	return $defaults[$setting];
