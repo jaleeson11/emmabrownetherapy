@@ -97,8 +97,7 @@ function emmabrownetherapy_hero() {
  */
 function emmabrownetherapy_image_cta( $section )
 {
-	$image_url = get_theme_mod( $section . '_image' );
-	$image_id  = attachment_url_to_postid( $image_url );
+	$image_id = get_theme_mod( $section . '_image' );
 	$image = array(
 		'about_me' => array(
 			'alt_text' => __( 'Portrait of Emma with a warm smile', 'emmabrownetherapy' ),
@@ -126,13 +125,26 @@ function emmabrownetherapy_image_cta( $section )
 			if ( $section === 'contact' ) :
 				?>
 				<ul class="image-cta__contact">
-					<li>
+					<li class="image-cta__contact__item">
 						<?php $admin_email = esc_html( get_option( 'admin_email' ) ); ?>
-						<a href="mailto: <?php echo $admin_email; ?>" class="main-navigation__top__link">
+						<a href="mailto: <?php echo $admin_email; ?>" class="image-cta__contact__link">
 							<span class="dashicons dashicons-email"></span>
 							<?php echo $admin_email; ?>
 						</a>
 					</li>
+					<?php
+					$phone = get_the_author_meta( 'phone', 1 );
+					if ( !is_null( $phone ) ) :
+						?>
+						<li class="image-cta__contact__item">
+							<a href="tel: <?php echo esc_html( $phone ); ?>" class="image-cta__contact__link">
+								<span class="dashicons dashicons-phone"></span>
+								<?php echo esc_html( $phone ); ?>
+							</a>
+						</li>
+						<?php
+					endif;
+					?>
 				</ul>
 				<?php
 			endif;
@@ -141,7 +153,7 @@ function emmabrownetherapy_image_cta( $section )
 				<?php echo esc_html( get_theme_mod( $section . '_button_text', emmabrownetherapy_theme_defaults( $section . '_button_text' ) ), 'emmabrownetherapy' ); ?>
 			</a>
 		</div>
-		<?php if ( $image_url ) : ?>
+		<?php if ( $image_id ) : ?>
 			<img class="image-cta__image" src="<?php echo esc_url( wp_get_attachment_image_url( $image_id, 'medium_large' ) ); ?>" alt="<?php echo get_post_meta( $image_id, '_wp_attachment_image_alt', true ); ?>">
 		<?php else : ?>
 			<img class="image-cta__image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/' . str_replace( '_', '-', $section ) . '-default.jpg' ); ?>" alt="<?php echo esc_html( $image[$section]['alt_text'] ); ?>">
