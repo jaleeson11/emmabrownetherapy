@@ -14,7 +14,6 @@
 	if ( ! empty( get_the_content() ) ) :
 		?>
 		<div class="container">
-			<?php emmabrownetherapy_post_thumbnail(); ?>
 
 			<div class="entry-content">
 				<?php
