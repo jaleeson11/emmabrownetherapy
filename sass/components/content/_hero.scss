@@ -37,6 +37,10 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: var(--space-xs);
+
+			a {
+				text-decoration: none;
+			}
         }
 	}
 }
