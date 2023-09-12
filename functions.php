@@ -319,3 +319,11 @@ function emmabrownetherapy_phone_field_save( $user_id ) {
 }
 add_action( 'personal_options_update', 'emmabrownetherapy_phone_field_save' );
 add_action( 'edit_user_profile_update', 'emmabrownetherapy_phone_field_save' );
+
+/**
+ * Replaces default login error message.
+ */
+function  emmabrownetherapy_login_error() {
+	return 'Your username or password is incorrect';
+}
+add_filter( 'login_errors', 'emmabrownetherapy_login_error' );
