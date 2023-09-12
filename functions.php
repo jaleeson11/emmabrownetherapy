@@ -327,3 +327,20 @@ function  emmabrownetherapy_login_error() {
 	return 'Your username or password is incorrect';
 }
 add_filter( 'login_errors', 'emmabrownetherapy_login_error' );
+
+/**
+ * Pre-loads fonts.
+ */
+function emmabrownetherapy_preload_fonts() {
+	$fonts = [
+		'Forum-Regular',
+		'WorkSans-Light',
+		'WorkSans-Regular'
+	];
+
+	foreach ($fonts as $font) {
+		?>
+		<link rel="preload" href="<?php echo get_template_directory_uri() . '/assets/fonts/' . $font . '.woff' ?>" as="font" type="font/woff" crossorigin>
+		<?php
+	}
+}

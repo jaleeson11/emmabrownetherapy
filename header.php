@@ -22,7 +22,10 @@
 	} ?>">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	<?php 
+	emmabrownetherapy_preload_fonts();
+	wp_head(); 
+	?>
 </head>
 
 <body <?php body_class(); ?>>
