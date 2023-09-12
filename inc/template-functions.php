@@ -57,7 +57,9 @@ function emmabrownetherapy_hero() {
 			if ( is_front_page() ) : 
 				?>
 				<h1 class="hero__sub-heading small">
-					<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+					</a>
 				</h1>
 				<p class="hero__heading h1">
 					<?php echo esc_html( get_bloginfo( 'description' ) ); ?>
@@ -66,7 +68,9 @@ function emmabrownetherapy_hero() {
 			else :
 				?>
 				<small class="hero__sub-heading">
-					<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+					</a>
 				</small>
 				<h1 class="hero__heading">
 					<?php echo wp_kses_post( get_the_title() ); ?>
