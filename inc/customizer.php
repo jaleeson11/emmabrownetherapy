@@ -473,26 +473,6 @@ function emmabrownetherapy_custom_sections( $wp_customize ) {
 		)
 	);
 
-	$wp_customize->add_setting(
-		'contact_button_text',
-		array(
-			'default'           => emmabrownetherapy_theme_defaults( 'contact_button_text' ),
-			'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Control(
-			$wp_customize,
-			'contact_button_text',
-			array(
-				'type'     => 'text',
-				'section'  => 'contact',
-				'label'    => 'Button Text',
-			)
-		)
-	);
-
 	$wp_customize->add_setting( 'contact_image' );
 	
 	$wp_customize->add_control(
